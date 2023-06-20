@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <base href="../" />
+
+  <title>Basic Elements - Ace Admin</title>
+
+  <!-- include common vendor stylesheets & fontawesome -->
+  <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/regular.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/solid.css">
+
+
+
+  <!-- include vendor stylesheets used in "Basic Elements" page. see "/views//pages/partials/form-basic/@vendor-stylesheets.hbs" -->
+  <link rel="stylesheet" type="text/css" href="./node_modules/nouislider/distribute/nouislider.min.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/ion-rangeslider/css/ion.rangeSlider.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="./node_modules/tiny-date-picker/tiny-date-picker.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/tiny-date-picker/date-range-picker.css">
+
+  <link rel="stylesheet" type="text/css"
+    href="./node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
+
+
+  <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css">
+
+
+  <!-- include fonts -->
+  <link rel="stylesheet" type="text/css" href="./dist/css/ace-font.css">
+
+
+
+  <!-- ace.css -->
+  <link rel="stylesheet" type="text/css" href="./dist/css/ace.css">
+
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+
+  <!-- "Basic Elements" page styles, specific to this page for demo only -->
+</head>
+
+<body>
+  <div class="body-container">
+
+    <div class="main-container bgc-white ">
+      <div role="main" class="main-content my-35">
+
+        <div class="page-content container container-plus shadow ">
+          <div class="card acard mt-2 mt-lg-3  pb-45">
+            <div class=" pb-0 card-banner-img" class="h-100">
+              <img src="../assets/image/application-form.jpg" alt="" class="w-100 object-fit-cover">
+            </div>
+
+            <div class="card-body px-3 pb-1">
+              <form class="mt-lg-3" autocomplete="off">
+                <div class="">
+                  <div class="card-header">
+                    <h3 class="card-title text-125 text-primary-d2">
+                      <i class="far fa-edit text-dark-l3 mr-1"></i>
+                      Payment Information
+                    </h3>
+                  </div>
+                  <div class="row d-flex  py-2">
+                    <div class="form-group col-md-4 ">
+                      <select class="form-control" id="form-field-select-1">
+                        <option value="">Select Size</option>
+                        <option value='AL'>Alabama</option>
+                        <option value='AK'>Alaska</option>
+                        <option value='AZ'>Arizona</option>
+                        <option value='AR'>Arkansas</option>
+                        <option value='CA'>California</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <select class="form-control" id="form-field-select-1">
+                        <option value="">Select Payment Plan</option>
+                        <option value='AL'>Alabama</option>
+                        <option value='AK'>Alaska</option>
+                        <option value='AZ'>Arizona</option>
+                        <option value='AR'>Arkansas</option>
+                        <option value='CA'>California</option>
+                      </select>
+                    </div>
+
+                    <div class="text-center col-md-4 ">
+                      <button class="w-100 btn btn-info btn-bold px-4" type="button">
+                        <i class="fa fa-check mr-1"></i>
+                        Payment Plan
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="row d-flex align-items-end py-2">
+                    <div class="form-group col-md-4">
+                      <select class="form-control" id="form-field-select-1">
+                        <option value="">Select Title</option>
+                        <option value='AL'>Mr.</option>
+                        <option value='AK'>Ms.</option>
+                        <option value='AZ'>Mrs.</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                        <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                        <span class="floating-label text-grey-m3">
+                          First Name
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                        <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                        <span class="floating-label text-grey-m3">
+                          Last Name
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row d-flex align-items-end">
+                    <div class="form-group col-md-4">
+                      <select class="form-control" id="form-field-select-1">
+                        <option value="">Select National Identity Type</option>
+                        <option value='AL'>Mr.</option>
+                        <option value='AK'>Ms.</option>
+                        <option value='AZ'>Mrs.</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                        <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                        <span class="floating-label text-grey-m3">
+                          NICOP Number
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                        <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                        <span class="floating-label text-grey-m3">
+                          Confirm NICOP Number
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row d-flex align-items-end">
+                    <div class="form-group col-6">
+                      <label for="id_time_el" class="text-secondary-d3">NICOP Issuence Date</label>
+                      <div class="input-group date" id="id-timepicker">
+                        <input type="text" name="end_time" value="05:12:00" class="form-control" id="id_time_el" />
+                        <div class="input-group-addon input-group-append">
+                          <div class="input-group-text">
+                            <i class="far fa-clock"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-6">
+                      <label for="id_time_el" class="text-secondary-d3">NICOP Expiry Date</label>
+                      <div class="input-group date" id="id-timepicker">
+                        <input type="text" name="end_time" value="05:12:00" class="form-control" id="id_time_el" />
+                        <div class="input-group-addon input-group-append">
+                          <div class="input-group-text">
+                            <i class="far fa-clock"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row d-flex align-items-end">
+                    <div class="form-group col-md-6">
+                      <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                        <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                        <span class="floating-label text-grey-m3">
+                          Email
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                        <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                        <span class="floating-label text-grey-m3">
+                          Confirm Email
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- farhan -->
+                <!-- contacts -->
+                <div class="card-header mb-3">
+                  <h3 class="card-title text-125 text-primary-d2">
+                    <i class="far fa-edit text-dark-l3 mr-1"></i>
+                    Contacts
+                  </h3>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="form-field-mask-2" />
+                      <span class="floating-label text-grey-m3">
+                        Mobile
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="form-field-mask-5" />
+                      <span class="floating-label text-grey-m3">
+                        Whatsapp No
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="form-field-mask-6" />
+                      <span class="floating-label text-grey-m3">
+                        Residence Phone No
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="form-field-mask-7" />
+                      <span class="floating-label text-grey-m3">
+                        Office Phone No
+                      </span>
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <!--  Permanent Address -->
+                <div class="card-header mb-3">
+                  <h3 class="card-title text-125 text-primary-d2">
+                    <i class="far fa-edit text-dark-l3 mr-1"></i>
+                    Permanent Address
+                  </h3>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Address Line 1
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Address Line 2
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Address Line 3
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-end">
+                  <div class="form-group col-md-3">
+
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">Select Country</option>
+                      <option value='AL'>CNIC</option>
+                      <option value='AK'>Pakistan Card</option>
+                      <option value='AZ'>Passport</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">Select State</option>
+                      <option value='AL'>CNIC</option>
+                      <option value='AK'>Pakistan Card</option>
+                      <option value='AZ'>Passport</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">Select City</option>
+                      <option value='AL'>CNIC</option>
+                      <option value='AK'>Pakistan Card</option>
+                      <option value='AZ'>Passport</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Postal/Zip Code
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- mailing address -->
+                <div class="card-header mb-3">
+                  <h3 class="card-title text-125 text-primary-d2">
+                    <i class="far fa-edit text-dark-l3 mr-1"></i>
+                    Mailing Address
+                  </h3>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Address Line 1
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Address Line 2
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Address Line 3
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex align-items-end">
+                  <div class="form-group col-md-3">
+
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">Select Country</option>
+                      <option value='AL'>CNIC</option>
+                      <option value='AK'>Pakistan Card</option>
+                      <option value='AZ'>Passport</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">Select State</option>
+                      <option value='AL'>CNIC</option>
+                      <option value='AK'>Pakistan Card</option>
+                      <option value='AZ'>Passport</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">Select City</option>
+                      <option value='AL'>CNIC</option>
+                      <option value='AK'>Pakistan Card</option>
+                      <option value='AZ'>Passport</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Postal/Zip Code
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <!-- farhan -->
+
+                <!-- Hamza -->
+
+                <div class="card-header mb-3">
+                  <h3 class="card-title text-125 text-primary-d2">
+                    <i class="far fa-edit text-dark-l3 mr-1"></i>
+                    Attachments
+                  </h3>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Default file input example</label>
+                      <input class="form-control" type="file" id="formFile">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Default file input example</label>
+                      <input class="form-control" type="file" id="formFile">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Default file input example</label>
+                      <input class="form-control" type="file" id="formFile">
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card-header mb-3">
+                  <h3 class="card-title text-125 text-primary-d2">
+                    <i class="far fa-edit text-dark-l3 mr-1"></i>
+                    Terms & Conditions
+                  </h3>
+                </div>
+
+                <div class="row d-flex align-items-end">
+                  <div class="form-group col-md-6">
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">How Did You Hear About This Lounch</option>
+                      <option value='AL'>Mr.</option>
+                      <option value='AK'>Ms.</option>
+                      <option value='AZ'>Mrs.</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <select class="form-control" id="form-field-select-1">
+                      <option value="">FBR Active Tax Payers Status</option>
+                      <option value='AL'>Mr.</option>
+                      <option value='AK'>Ms.</option>
+                      <option value='AZ'>Mrs.</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-12">
+                    <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                      <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                      <span class="floating-label text-grey-m3">
+                        Other
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="w-100 d-flex justify-content-end">
+                  <div class="text-center col-sm-12 col-md-4">
+                    <button class="w-100 btn btn-info btn-bold px-4" type="button">
+                      <i class="fa fa-check mr-1"></i>
+                      Terms & Conditions
+                    </button>
+                  </div>
+                  <div class="text-center col-sm-12 col-md-4">
+                    <button class="w-100 btn btn-info btn-bold px-4" type="button">
+                      <i class="fa fa-check mr-1"></i>
+                      Submit Form
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Hamza -->
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- include common vendor scripts used in demo pages -->
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+  <!-- include vendor scripts used in "Basic Elements" page. see "/views//pages/partials/form-basic/@vendor-scripts.hbs" -->
+  <script src="./node_modules/autosize/dist/autosize.js"></script>
+  <script src="./node_modules/bootstrap-maxlength/dist/bootstrap-maxlength.js"></script>
+
+  <script src="./node_modules/inputmask/dist/jquery.inputmask.js"></script>
+
+
+  <script src="./node_modules/nouislider/distribute/nouislider.js"></script>
+  <script src="./node_modules/ion-rangeslider/js/ion.rangeSlider.js"></script>
+
+
+  <script src="./node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js"></script>
+
+
+  <script src="./node_modules/tiny-date-picker/dist/date-range-picker.js"></script>
+  <script src="./node_modules/moment/moment.js"></script>
+  <script src="./node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+
+
+
+  <script src="./node_modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+
+  <script src="./node_modules/es6-object-assign/dist/object-assign-auto.js"></script>
+  <script src="./node_modules/@jaames/iro/dist/iro.js"></script>
+
+
+  <script src="./node_modules/jquery-knob/dist/jquery.knob.min.js"></script>
+
+
+
+  <!-- include ace.js -->
+  <script src="./dist/js/ace.js"></script>
+
+
+
+  <!-- demo.js is only for Ace's demo and you shouldn't use it -->
+  <script src="./app/browser/demo.js"></script>
+
+
+
+
+  <!-- "Basic Elements" page script to enable its demo functionality -->
+  <script src="./views/pages/form-basic/@page-script.js"></script>
+</body>
+
+</html>
