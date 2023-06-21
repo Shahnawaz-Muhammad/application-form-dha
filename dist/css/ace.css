@@ -134,6 +134,14 @@ body:not(.is-document-loaded) * {
   font-size: .8rem;
 }
 
+.section-title{
+  font-size: 2rem;
+}
+
+.sw-theme-circles>ul.step-anchor{
+  margin-bottom: 10px !important;
+}
+
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .main-content {
     min-height: 100vh;
@@ -9754,15 +9762,7 @@ $my-sidebar-themes: (
   position: relative;
 }
 
-.acard > .card-header {
-  background-color: transparent;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  padding-bottom: 0.5rem;
-  -ms-flex-align: center;
-  align-items: center;
-  border-color: #e6eaed;
-}
+
 
 .acard > .card-header .card-title {
   color: #4c5b70;
@@ -9778,8 +9778,7 @@ $my-sidebar-themes: (
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  
 }
 
 .card-header.card-header-sm {
@@ -9793,7 +9792,6 @@ $my-sidebar-themes: (
 .card-title {
   color: #2564a9;
   -ms-flex-positive: 1;
-  flex-grow: 1;
   line-height: normal;
   margin-bottom: 0;
 }
@@ -15483,6 +15481,8 @@ input[type=checkbox]:disabled + label, input[type=radio]:disabled + label {
   position: relative;
 }
 
+
+
 .input-floating-label .floating-label {
   pointer-events: none;
   background-color: #fff;
@@ -15494,6 +15494,10 @@ input[type=checkbox]:disabled + label, input[type=radio]:disabled + label {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   transition: all 0.15s;
+}
+
+.form-control:disabled .input-floating-label .floating-label{
+  background-color: red;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -17532,17 +17536,6 @@ li.dropdown-item {
 
 .accordion .card-header .card-title {
   font-size: 1rem;
-}
-
-.accordion .card-header .accordion-toggle {
-  display: block;
-  width: 100%;
-  text-align: left;
-  border-width: 0;
-  font-weight: 600;
-  padding: 0.75rem 1.25rem 0.875rem;
-  position: relative;
-  overflow: hidden;
 }
 
 .accordion .card-header .accordion-toggle.collapsed {
@@ -20848,8 +20841,8 @@ div.dt-button-info {
   z-index: 3;
   margin: 0 auto;
   padding: 0;
-  width: 4rem;
-  height: 4rem;
+  width:2rem;
+  height: 2rem;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -20857,9 +20850,9 @@ div.dt-button-info {
   -ms-flex-pack: center;
   justify-content: center;
   color: #45464b;
-  font-size: 1.125rem;
+  font-size: 1rem;
   background-color: #fff;
-  border: 5px solid;
+  border: 2px solid;
   border-color: inherit !important;
   border-radius: 50%;
   box-shadow: none !important;
@@ -20868,8 +20861,8 @@ div.dt-button-info {
 @media (max-width: 575.98px) {
   .sw-theme-circles > ul.step-anchor > li.nav-item > a,
   .sw-theme-circles > ul.step-anchor > li.nav-item.active ~ li.done > a {
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 2rem;
+    height: 2rem;
     border-width: 4px;
   }
 }

@@ -67,141 +67,149 @@
                   <form class="mt-lg-3" autocomplete="off">
                     <div class="">
                       <div class="row d-flex  ">
-                        <div class="form-group col-md-4 ">
+                        <div class="form-group col-md-4">
                           <select class="form-control" id="form-field-select-1">
                             <option value="">Select Title</option>
-                            <option value='AL'>Mr.</option>
-                            <option value='AK'>Mrs.</option>
-                            <option value='AZ'>Ms.</option>
+                          
                           </select>
+                          <div id="title-error" style="color: red;"></div>
                         </div>
 
                         <div class="form-group col-md-4">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="text" class="form-control shadow-none" id="first-name-field" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '').replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })" required />
                             <span class="floating-label text-grey-m3">
                               First Name
                             </span>
                           </div>
+                          <div id="first-name-error" style="color: red;"></div>
                         </div>
-
+                        
+                        <!-- Add validation for the last name field -->
                         <div class="form-group col-md-4">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="text" class="form-control shadow-none" id="last-name-field" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '').replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); })" required />
                             <span class="floating-label text-grey-m3">
                               Last Name
                             </span>
                           </div>
+                          <div id="last-name-error" style="color: red;"></div>
                         </div>
-                      </div>
 
-                      <div class="row d-flex align-items-end ">
-
+                        <!-- Add validation for the email and confirm email fields -->
                         <div class="form-group col-md-6">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="text" class="form-control shadow-none" id="email-field" />
                             <span class="floating-label text-grey-m3">
                               Email
                             </span>
                           </div>
+                          <div id="email-error" style="color: red;"></div>
                         </div>
 
                         <div class="form-group col-md-6">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="text" class="form-control shadow-none" id="confirm-email-field" />
                             <span class="floating-label text-grey-m3">
                               Confirm Email
                             </span>
                           </div>
+                          <div id="confirm-email-error" style="color: red;"></div>
                         </div>
-                      </div>
 
-
-                      <div class="row d-flex align-items-end ">
-
+                        <!-- Add validation for the phone and confirm phone fields -->
                         <div class="form-group col-md-6">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="number" class="form-control shadow-none" id="phone-field" pattern="\d+" required />
                             <span class="floating-label text-grey-m3">
                               Phone
                             </span>
                           </div>
+                          <div id="phone-error" style="color: red;"></div>
                         </div>
+                        
 
                         <div class="form-group col-md-6">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="number" class="form-control shadow-none" id="confirm-phone-field" pattern="\d+" required />
                             <span class="floating-label text-grey-m3">
                               Confirm Phone
                             </span>
                           </div>
+                          <div id="confirm-phone-error" style="color: red;"></div>
                         </div>
-                      </div>
+                        
 
-                      <!--  Permanent Address -->
-                      <div class="row d-flex align-items-end">
-                        <div class="form-group col-md-4">
-                          <select class="form-control" id="idType">
+                        <!-- Add validation for the NIC number and confirm NIC number fields -->
+                        <div class="form-group col-md-6">
+                          <select class="form-control" id="nic-type" onchange="handleNicTypeChange()">
                             <option value="">Select NIC Type</option>
-                            <option value='AL'>CNIC</option>
-                            <option value='AK'>Pakistan Card</option>
-                            <option value='AZ'>Passport</option>
+                            <!-- <option value="AL">CNIC</option>
+                            <option value="AK">Pakistan Card</option>
+                            <option value="AZ">Passport</option> -->
                           </select>
+                          <div id="nic-type-error" style="color: red;"></div>
                         </div>
 
-                        <div class="form-group col-md-4">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="idNumber" />
-                            <span class="floating-label text-grey-m3" id="idNumberLabel">
+                        <div class="form-group col-md-3">
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="text" class="form-control shadow-none" id="idNumber" disabled />
+                            <span class="floating-label text-grey-m3" id="nic_Label">
                               NIC Number
                             </span>
                           </div>
+                          <div id="nic-number-error" style="color: red;"></div>
                         </div>
-                        <div class="form-group col-md-4">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control  shadow-none" id="id-form-field-2" />
-                            <span class="floating-label text-grey-m3">
+
+                        <div class="form-group col-md-3">
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="text" class="form-control shadow-none" id="confirm-nic-number-field" disabled/>
+                            <span class="floating-label text-grey-m3" id="confirm_nic_Label">
                               Confirm NIC Number
                             </span>
                           </div>
+                          <div id="confirm-nic-number-error" style="color: red;"></div>
                         </div>
-                      </div>
-                      <div class="row">
+
+                        <!-- Add validation for the password and confirm password fields -->
                         <div class="form-group col-md-6">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="text" class="form-control shadow-none" id="password-field" />
                             <span class="floating-label text-grey-m3">
                               Password
                             </span>
                           </div>
+                          <div id="password-error" style="color: red;"></div>
                         </div>
+
                         <div class="form-group col-md-6">
-                          <div class=" input-floating-label text-blue-d2 brc-blue-m1">
-                            <input type="text" class="form-control shadow-none" id="id-form-field-2" />
+                          <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                            <input type="password" class="form-control shadow-none" id="confirm-password-field" />
                             <span class="floating-label text-grey-m3">
                               Confirm Password
                             </span>
                           </div>
+                          <div id="confirm-password-error" style="color: red;"></div>
                         </div>
-                      </div>
 
-                      <div class="w-100 d-flex justify-content-end">
-                        <!-- <div class="text-center col-sm-12 col-md-4">
+
+                        <div class="w-100 d-flex justify-content-end">
+                          <!-- <div class="text-center col-sm-12 col-md-4">
                       <button class="w-100 btn btn-info btn-bold px-4 radius-5" type="button">
                         <i class="fa fa-check mr-1"></i>
                         Terms & Conditions
                       </button>
                     </div> -->
-                        <div class="text-center col-sm-12 col-md-3">
-                          <button class="w-100 btn btn-info btn-bold border-0 px-4 radius-5" type="button"
-                            style="background:linear-gradient(to right, #141e30, #243b55);">
-                            Create
-                            <i class="fa fa-chevron-circle-right mr-1"></i>
-                          </button>
+                          <div class="text-center col-sm-12 col-md-3">
+                            <button class="w-100 btn btn-info btn-bold border-0 px-4 radius-5" type="button"
+                              style="background:linear-gradient(to right, #141e30, #243b55);" onclick="submitForm()">
+                              Create
+                              <i class="fa fa-chevron-circle-right mr-1"></i>
+                            </button>
+                          </div>
                         </div>
-                      </div>
 
-                      <!-- Hamza -->
+                        <!-- Hamza -->
                   </form>
                 </div>
               </div>
@@ -219,8 +227,9 @@
                 </div>
               </div>
               <div class=" py-2">
-                <a href="https://claystone.pk/" target="_blank" class="w-100 row d-flex justify-content-center align-items-center">
-                  <img src="../assets/image/Powered-by-logo.png"  alt="" class="col-md-3">
+                <a href="https://claystone.pk/" target="_blank"
+                  class="w-100 row d-flex justify-content-center align-items-center">
+                  <img src="../assets/image/Powered-by-logo.png" alt="" class="col-md-3">
                 </a>
               </div>
 
@@ -234,6 +243,426 @@
     </div>
   </div>
 
+
+
+
+
+  <script>
+
+
+    ////////////////////////////////sign up data 
+
+    // Add an event listener to the form submit event
+    function handleNicTypeChange() {
+  var nicTypeSelect = document.getElementById('nic-type');
+  var idNumberInput = document.getElementById('idNumber');
+  var confirmNicNumberInput = document.getElementById('confirm-nic-number-field');
+
+ // idNumberInput.value = '';
+  //confirmNicNumberInput.value = '';
+  document.getElementById('nic-number-error').textContent = '';
+  document.getElementById('confirm-nic-number-error').textContent = '';
+  var nicLabel = document.getElementById('nic_Label');
+  var confirmNicLabel = document.getElementById('confirm_nic_Label');
+
+  
+
+
+  if (nicTypeSelect.value === '') {
+    idNumberInput.disabled = true;
+  confirmNicNumberInput.disabled = true;
+  nicLabel.textContent = 'Select NIC Type';
+      confirmNicLabel.textContent = 'Select NIC Type';
+  } else {
+    idNumberInput.disabled = false;
+    confirmNicNumberInput.disabled = false;
+
+    if (nicTypeSelect.value === '71') { // CNIC
+
+      idNumberInput.setAttribute('maxlength', '15');
+      idNumberInput.setAttribute('pattern', '\\d{5}-\\d{7}-\\d');
+      confirmNicNumberInput.setAttribute('maxlength', '15');
+      confirmNicNumberInput.setAttribute('pattern', '\\d{5}-\\d{7}-\\d');
+      idNumberInput.addEventListener('input', handleIdNumberInput);
+      confirmNicNumberInput.addEventListener('input', handleConfirmNicNumberInput);
+      nicLabel.textContent = 'CNIC Number';
+      confirmNicLabel.textContent = 'CNIC Number';
+    } else if (nicTypeSelect.value === '73') { // Pakistan Card
+      idNumberInput.setAttribute('maxlength', '13');
+      idNumberInput.removeAttribute('pattern');
+      confirmNicNumberInput.setAttribute('maxlength', '11');
+      confirmNicNumberInput.removeAttribute('pattern');
+      idNumberInput.removeEventListener('input', handleIdNumberInput);
+      confirmNicNumberInput.removeEventListener('input', handleConfirmNicNumberInput);
+      nicLabel.textContent = 'NICOP';
+      confirmNicLabel.textContent = 'NICOP';
+    } else
+    if (nicTypeSelect.value === '72') { 
+  
+  idNumberInput.setAttribute('maxlength', '9');
+ 
+  confirmNicNumberInput.setAttribute('maxlength', '9');
+  nicLabel.textContent = 'POC';
+      confirmNicLabel.textContent = 'POC';
+ ;
+  
+}
+  }
+}
+
+function handleIdNumberInput() {
+  var idNumberInput = document.getElementById('idNumber');
+  var value = idNumberInput.value;
+
+  if (value.length === 5 && value.indexOf('-') === -1) {
+    idNumberInput.value = value + '-';
+  } else if (value.length === 14 && value.lastIndexOf('-') !== value.length - 1) {
+    idNumberInput.value = value.slice(0, -1) + '-' + value.slice(-1);
+  }
+}
+
+function handleConfirmNicNumberInput() {
+  var confirmNicNumberInput = document.getElementById('confirm-nic-number-field');
+  var value = confirmNicNumberInput.value;
+
+  if (value.length === 5 && value.indexOf('-') === -1) {
+    confirmNicNumberInput.value = value + '-';
+  } else if (value.length === 14 && value.lastIndexOf('-') !== value.length - 1) {
+    confirmNicNumberInput.value = value.slice(0, -1) + '-' + value.slice(-1);
+  }
+}
+
+    // Function to handle form submission
+   // Function to handle form submission
+function submitForm(event) {
+ // event.preventDefault(); // Prevent the default form submission
+
+  // Get the form field values
+  var selectTitle = document.getElementById('form-field-select-1').value;
+  console.log(selectTitle);
+  var firstName = document.getElementById('first-name-field').value;
+  var lastName = document.getElementById('last-name-field').value;
+  var email = document.getElementById('email-field').value;
+  var confirmEmail = document.getElementById('confirm-email-field').value;
+  var phone = document.getElementById('phone-field').value;
+  var confirmPhone = document.getElementById('confirm-phone-field').value;
+  var selectIdentity = document.getElementById('nic-type').value;
+  var nic = document.getElementById('idNumber').value;
+  var confirmNic = document.getElementById('confirm-nic-number-field').value;
+  var password = document.getElementById('password-field').value;
+  var confirmPassword = document.getElementById('confirm-password-field').value;
+
+  // Create a FormData object and append form field values to it
+  const formData = new FormData();
+  formData.append('title', selectTitle);
+  formData.append('first_name', firstName);
+  formData.append('last_name', lastName);
+  formData.append('email', email);
+  formData.append('mobile', phone);
+  formData.append('national_identity_type', selectIdentity);
+  formData.append('national_identity_number', nic);
+  formData.append('password1', password);
+  formData.append('password2', confirmPassword);
+  
+
+  // Perform the Ajax POST request
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'http://192.168.150.74:8080/signup/');
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      // Successful response
+      const response = JSON.parse(xhr.responseText);
+      // Process the response as needed
+      console.log(response);
+      alert("success");
+    } else {
+      // Error response
+      console.log('Error:', xhr.status);
+    }
+  };
+  xhr.onerror = function () {
+    
+    console.log('Request failed');
+  };
+  xhr.send(formData);
+}
+
+
+
+
+    //////////////////////////api for title drop down ///////////////////////////
+    function fetchTitles() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://192.168.150.74:8080/titles/', true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          if (response.status === 1) {
+            var titlesData = response.data;
+            populateTitlesDropdown(titlesData);
+          } else {
+            console.log('Error: Response status is not 1');
+          }
+        } else {
+          console.log('Error: ' + xhr.status);
+        }
+      };
+      xhr.send();
+    }
+
+    // Populate the "Select Title" dropdown with the fetched data
+    function populateTitlesDropdown(titlesData) {
+      var selectElement = document.getElementById('form-field-select-1');
+      for (var i = 0; i < titlesData.length; i++) {
+        var option = document.createElement('option');
+        option.value = titlesData[i].value;
+        option.textContent = titlesData[i].name;
+        selectElement.appendChild(option);
+      }
+    }
+
+
+    ////////////////for nic api type drop down/////////////
+    function fetchNICTypes() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://192.168.150.74:8080/national_identity_types', true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          populateNICDropdown(response.data);
+        } else {
+          console.log('Error: ' + xhr.status);
+        }
+      };
+      xhr.send();
+    }
+
+    // Populate the "Select NIC Type" dropdown with the fetched data
+    function populateNICDropdown(nicData) {
+      var selectElement = document.getElementById('nic-type');
+      for (var i = 0; i < nicData.length; i++) {
+        var option = document.createElement('option');
+        option.value = nicData[i].value;
+        option.textContent = nicData[i].name;
+        selectElement.appendChild(option);
+      }
+    }
+
+    // Call the fetchTitles function when the window is loaded
+    window.onload = function () {
+      fetchTitles();
+      fetchNICTypes();
+    };
+    // Retrieve the necessary elements
+    const selectField = document.getElementById('form-field-select-1');
+    const lastNameField = document.getElementById('last-name-field');
+    const emailField = document.getElementById('email-field');
+    const confirmEmailField = document.getElementById('confirm-email-field');
+    const phoneField = document.getElementById('phone-field');
+    const confirmPhoneField = document.getElementById('confirm-phone-field');
+    const idNumberField = document.getElementById('idNumber');
+    const confirmNicNumberField = document.getElementById('confirm-nic-number-field');
+    const passwordField = document.getElementById('password-field');
+    const confirmPasswordField = document.getElementById('confirm-password-field');
+
+    document.getElementById('first-name-field').addEventListener('blur', validateFirstName);
+    document.getElementById('confirm-password-field').addEventListener('blur', validateConfirmPassword);
+    document.getElementById('nic-type').addEventListener('blur', validateNicType);
+
+    // Add an event listener to the input box to validate the dropdown value
+    lastNameField.addEventListener('blur', validateLastName);
+    emailField.addEventListener('blur', validateEmail);
+    confirmEmailField.addEventListener('blur', validateConfirmEmail);
+    phoneField.addEventListener('blur', validatePhone);
+    confirmPhoneField.addEventListener('blur', validateConfirmPhone);
+    idNumberField.addEventListener('blur', validateNicNumber);
+    confirmNicNumberField.addEventListener('blur', validateConfirmNicNumber);
+    passwordField.addEventListener('blur', validatePassword);
+    confirmPasswordField.addEventListener('blur', validateConfirmPassword);
+
+
+
+
+
+    
+    // Validation functions
+    function validateFirstName() {
+      const firstNameField = document.getElementById('first-name-field');
+      if (firstNameField.value === '') {
+        firstNameField.style.borderColor = 'red';
+        document.getElementById('first-name-error').textContent = 'Please enter your first name';
+      } else {
+        firstNameField.style.borderColor = '';
+        document.getElementById('first-name-error').textContent = '';
+      }
+    }
+    function validateLastName() {
+      const LastNameField = document.getElementById('last-name-field');
+      if (LastNameField.value === '') {
+        LastNameField.style.borderColor = 'red';
+        document.getElementById('last-name-error').textContent = 'Please Enter a Last Name';
+      } else {
+        LastNameField.style.borderColor = '';
+        document.getElementById('last-name-error').textContent = '';
+      }
+    }
+
+    function validateEmail() {
+  const emailField = document.getElementById('email-field');
+  const emailError = document.getElementById('email-error');
+  const emailPattern = /^\S+@\S+\.\S+$/; // Email pattern
+
+  if (emailField.value === '') {
+    emailField.style.borderColor = 'red';
+    emailError.textContent = 'Please enter your Email';
+  } else if (!emailPattern.test(emailField.value)) {
+    emailField.style.borderColor = 'red';
+    emailError.textContent = 'Please enter a valid Email';
+  } else {
+    emailField.style.borderColor = '';
+    emailError.textContent = '';
+  }
+}
+
+
+    function validateConfirmEmail() {
+  const confirmEmailField = document.getElementById('confirm-email-field');
+  const emailField = document.getElementById('email-field');
+
+  if (confirmEmailField.value === '') {
+    confirmEmailField.style.borderColor = 'red';
+    document.getElementById('confirm-email-error').textContent = 'Please Confirm your  Email';
+  } else if (confirmEmailField.value !== emailField.value) {
+    confirmEmailField.style.borderColor = 'red';
+    document.getElementById('confirm-email-error').textContent = 'Emails do not match';
+  } else {
+    confirmEmailField.style.borderColor = '';
+    document.getElementById('confirm-email-error').textContent = '';
+  }
+}
+
+
+    function validatePhone() {
+      const PhoneNumber = document.getElementById('phone-field');
+      if (PhoneNumber.value === '') {
+        PhoneNumber.style.borderColor = 'red';
+        document.getElementById('phone-error').textContent = 'Please confirm your Phone';
+      } else {
+        PhoneNumber.style.borderColor = '';
+        document.getElementById('phone-error').textContent = ''
+      }
+    }
+
+    function validateConfirmPhone() {
+  const confirmPhoneNumberField = document.getElementById('confirm-phone-field');
+  const phoneNumberField = document.getElementById('phone-field');
+
+  if (confirmPhoneNumberField.value === '') {
+    confirmPhoneNumberField.style.borderColor = 'red';
+    document.getElementById('confirm-phone-error').textContent = 'Please Confirm your phone number';
+  } else if (confirmPhoneNumberField.value !== phoneNumberField.value) {
+    confirmPhoneNumberField.style.borderColor = 'red';
+    document.getElementById('confirm-phone-error').textContent = 'Phone numbers do not match';
+  } else {
+    confirmPhoneNumberField.style.borderColor = '';
+    document.getElementById('confirm-phone-error').textContent = '';
+  }
+}
+
+
+   
+
+    function validateNicType() {
+      const nicTypeField = document.getElementById('nic-type');
+      if (nicTypeField.value === '') {
+        nicTypeField.style.borderColor = 'red';
+        document.getElementById('nic-type-error').textContent = 'Please select a NIC type';
+      }else{
+        nicTypeField.style.borderColor = '';
+        document.getElementById('nic-type-error').textContent = '';
+      }
+    }
+
+    function validateNicNumber() {
+      const NicNumber = document.getElementById('idNumber');
+      if (NicNumber.value === '') {
+        NicNumber.style.borderColor = 'red';
+        document.getElementById('nic-number-error').textContent = 'Please confirm your NIC ';
+      } else {
+        NicNumber.style.borderColor = '';
+        document.getElementById('nic-number-error').textContent = '';
+      }
+    }
+
+    function validateConfirmNicNumber() {
+      const ConfirmNicNumber = document.getElementById('confirm-nic-number-field');
+      if (ConfirmNicNumber.value === '') {
+        ConfirmNicNumber.style.borderColor = 'red';
+        document.getElementById('confirm-nic-number-error').textContent = 'Please enter your NIC number';
+      } else {
+        ConfirmNicNumber.style.borderColor = '';
+        document.getElementById('confirm-nic-number-error').textContent = '';
+      }
+    }
+
+
+    function validatePassword() {
+  const passwordField = document.getElementById('password-field');
+  const password = passwordField.value;
+
+  // Regular expressions for password requirements
+  const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+  const capitalLetterRegex = /[A-Z]/;
+  const numberRegex = /[0-9]/;
+
+  let errorMessage = '';
+
+  // Check password length
+  if (password.length < 8) {
+    errorMessage = 'Password must be at least 8 characters long';
+  }
+  // Check for special character
+  else if (!specialCharRegex.test(password)) {
+    errorMessage = 'Password must contain at least one special character';
+  }
+  // Check for capital letter
+  else if (!capitalLetterRegex.test(password)) {
+    errorMessage = 'Password must contain at least one capital letter';
+  }
+  // Check for number
+  else if (!numberRegex.test(password)) {
+    errorMessage = 'Password must contain at least one number';
+  }
+
+  // Update error message and field style
+  const passwordError = document.getElementById('password-error');
+  passwordError.textContent = errorMessage;
+  passwordField.style.borderColor = errorMessage ? 'red' : '';
+
+  return !errorMessage; // Return true if no error, false otherwise
+}
+function validateConfirmPassword() {
+  const confirmPasswordField = document.getElementById('confirm-password-field');
+  const originalPasswordField = document.getElementById('password-field');
+
+  if (confirmPasswordField.value === '') {
+    confirmPasswordField.style.borderColor = 'red';
+    document.getElementById('confirm-password-error').textContent = 'Please confirm your Password';
+    //confirmPasswordField.textContent = 'Please confirm your Password';
+  } else if (confirmPasswordField.value !== originalPasswordField.value) {
+    confirmPasswordField.style.borderColor = 'red';
+    document.getElementById('confirm-password-error').textContent = 'Passwords do not match';
+  } else {
+    confirmPasswordField.style.borderColor = '';
+    document.getElementById('confirm-password-error').textContent = '';
+  }
+}
+
+
+
+   
+  
+  </script>
   <!-- include common vendor scripts used in demo pages -->
   <script src="./node_modules/jquery/dist/jquery.js"></script>
   <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
@@ -268,9 +697,6 @@
 
 
   <script src="./node_modules/jquery-knob/dist/jquery.knob.min.js"></script>
-
-
-
   <!-- include ace.js -->
   <script src="./dist/js/ace.js"></script>
 

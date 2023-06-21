@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <base href="../" />
+
+  <title> Application Form</title>
+
+  <!-- include common vendor stylesheets & fontawesome -->
+  <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/regular.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/solid.css">
+
+
+
+  <!-- include vendor stylesheets used in "Wizard & Validation" page. see "/views//pages/partials/form-wizard/@vendor-stylesheets.hbs" -->
+  <link rel="stylesheet" type="text/css" href="./node_modules/smartwizard/dist/css/smart_wizard.min.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/smartwizard/dist/css/smart_wizard_theme_circles.min.css">
+
+
+  <!-- include fonts -->
+  <link rel="stylesheet" type="text/css" href="./dist/css/ace-font.css">
+
+
+
+  <!-- ace.css -->
+  <link rel="stylesheet" type="text/css" href="./dist/css/ace.css">
+
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+
+  <!-- "Wizard & Validation" page styles, specific to this page for demo only -->
+</head>
+
+<body>
+  <div class="body-container">
+
+    <div class="main-container bgc-white">
+
+
+
+      <div role="main" class="main-content">
+
+        <div class="page-content container container-plus">
+          <div class="row my-4 d-flex justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card">
+                <div class="card-header">
+                  <div>
+                    <img src="../assets/image/application-form.jpg" alt="" class="w-100 ">
+                  </div>
+                  <div class="card-toolbar mr-auto no-border d-none">
+                    <label class="mb-0">
+                      <span class="align-middle d-block d-sm-inline text-600">
+                        Input Validation:
+                      </span>
+                      <input type="checkbox" id="id-validate"
+                        class="input-lg text-secondary-l1 bgc-purple-d1 ml-2 ace-switch ace-switch-onoff align-middle" />
+                    </label>
+                  </div>
+
+                  <div class="card-toolbar pl-3 d-none">
+                    <!-- buttons used to control/navigate the wizard -->
+                    <button id="wizard-1-prev" type="button"
+                      class="mx-2px btn btn-outline-default btn-h-outline-primary btn-bgc-white btn-a-primary border-2 radius-1"
+                      disabled>
+                      <i class="fa fa-chevron-left"></i>
+                    </button>
+
+                    <button id="wizard-1-next" type="button"
+                      class="mx-2px btn btn-outline-default btn-h-outline-primary btn-bgc-white btn-a-primary border-2 radius-1">
+                      <i class="fa fa-chevron-right"></i>
+                    </button>
+
+                    <button id="wizard-1-finish" type="button"
+                      class="d-none mx-2px px-3 btn btn-outline-success btn-h-outline-success btn-bgc-white border-2 radius-1">
+                      <i class="fa fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+
+
+                <div class="card-body">
+
+                  <div id="smartwizard-1" class="d-none mx-n3 mx-sm-auto">
+                    <ul class="mx-auto">
+                      <li class="wizard-progressbar"></li><!-- the progress line connecting wizard steps -->
+
+                      <li>
+                        <a href="#step-1">
+                          <span class="step-title">
+                            1
+                          </span>
+
+                          <span class="step-title-done">
+                            <i class="fa fa-check text-success"></i>
+                          </span>
+                        </a>
+                      </li>
+
+
+                      <li>
+                        <a href="#step-2">
+                          <span class="step-title">
+                            2
+                          </span>
+
+                          <span class="step-title-done">
+                            <i class="fa fa-check text-success"></i>
+                          </span>
+                        </a>
+                      </li>
+
+
+                      <li>
+                        <a href="#step-3">
+                          <span class="step-title">
+                            3
+                          </span>
+
+                          <span class="step-title-done">
+                            <i class="fa fa-check text-success"></i>
+                          </span>
+                        </a>
+                      </li>
+
+
+
+                    </ul>
+
+
+                    <div class="px-2 py-2 mb-4">
+                      <div id="step-1">
+                        <form novalidate>
+                          <div class="">
+                            <div class="card-header py-2">
+                              <h3 class="card-title text-125  text-primary-d2">
+                                <i class="fas fa-money-check"></i>
+                                Payment Information
+                              </h3>
+                            </div>
+                            <div class="row d-flex  pt-2">
+                              <div class="form-group col-md-4 ">
+                                <select class="form-control" id="plot-size-select">
+                                  <option value="">Plot Size</option>
+                                  
+                                </select>
+                              </div>
+
+                              <div class="form-group col-md-4">
+                                <select class="form-control" id="payment-plan-select">
+                                  <option value=""> Payment Plan</option>
+                                  <option value='AL'>Alabama</option>
+                                  <option value='AK'>Alaska</option>
+                                  <option value='AZ'>Arizona</option>
+                                  <option value='AR'>Arkansas</option>
+                                  <option value='CA'>California</option>
+                                </select>
+                              </div>
+
+                              <div class="text-center col-md-4 ">
+                                <button class="w-100 btn btn-info btn-bold px-4 radius-3" type="button">
+                                  <i class="fa fa-check mr-1"></i>
+                                  Payment Plan
+                                </button>
+                              </div>
+                            </div>
+
+                            <div class="row d-flex align-items-end py-2">
+                              <div class="form-group col-md-4">
+                                <select class="form-control" id="title-select">
+                                  <option value=""> Title</option>
+                                  <option value='AL'>Mr.</option>
+                                  <option value='AK'>Ms.</option>
+                                  <option value='AZ'>Mrs.</option>
+                                </select>
+                              </div>
+
+                              <div class="form-group col-md-4">
+                                <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                                  <input type="text" class="form-control  shadow-none" id="firstname-input" />
+                                  <span class="floating-label text-grey-m3">
+                                    First Name
+                                  </span>
+                                </div>
+                              </div>
+
+                              <div class="form-group col-md-4">
+                                <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                                  <input type="text" class="form-control  shadow-none" id="lastname-input" />
+                                  <span class="floating-label text-grey-m3">
+                                    Last Name
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="row d-flex align-items-end ">
+                              <div class="form-group col-md-4">
+                                <select class="form-control" id="nicType">
+                                  <option value=""> NIC Type</option>
+                                  <option value='cnic'>CNIC</option>
+                                  <option value='pakistanCard'>POC</option>
+                                  <option value='passport'>NICOP</option>
+                                </select>
+                                <div class="error-message"></div>
+                              </div>
+
+                              <div class="form-group col-md-4">
+                                <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                                  <input type="number" class="form-control  shadow-none" id="nic-number-input" />
+                                  <span class="floating-label text-grey-m3" id="nic-number-label">
+                                    NIC Number
+                                  </span>
+                                </div>
+                                <div class="error-message"></div>
+                              </div>
+                              <div class="form-group col-md-4">
+                                <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                                  <input type="number" class="form-control  shadow-none" id="confirm-nic-number-input" />
+                                  <span class="floating-label text-grey-m3" id="confirm-nic-number-label">
+                                    Confirm NIC Number
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row d-flex align-items-end">
+                              <div class="form-group col-12 col-md-6 ">
+                                <label  class="text-secondary-d3">NICOP Issuence Date</label>
+                                <div class="input-group date" id="nic-issuence">
+                                  <input type="text" name="end_time" value="05:12:00" class="form-control"
+                                    id="nic-issuence-date" />
+                                  <div class="input-group-addon input-group-append">
+                                    <div class="input-group-text">
+                                      <i class="far fa-clock"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group col-12 col-md-6">
+                                <label class="text-secondary-d3">NICOP Expiry Date</label>
+                                <div class="input-group date" id="nic-expiry">
+                                  <input type="text" name="end_time" value="05:12:00" class="form-control"
+                                    id="nic-expiry-date" />
+                                  <div class="input-group-addon input-group-append">
+                                    <div class="input-group-text">
+                                      <i class="far fa-clock"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="row d-flex align-items-end">
+                              <div class="form-group col-md-6">
+                                <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                                  <input type="text" class="form-control  shadow-none" id="email-input" />
+                                  <span class="floating-label text-grey-m3">
+                                    Email
+                                  </span>
+                                </div>
+                              </div>
+
+                              <div class="form-group col-md-6">
+                                <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                                  <input type="text" class="form-control  shadow-none" id="confirm-email-input" />
+                                  <span class="floating-label text-grey-m3">
+                                    Confirm Email
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+
+                      <div id="step-2">
+                        <div class="card-header py-2 mb-3">
+                          <h3 class="card-title text-125  text-primary-d2 ">
+                            <i class="fas fa-phone-alt mr-1"></i>
+                            Contacts
+                          </h3>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-md-3">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="mobile-input" />
+                              <span class="floating-label text-grey-m3">
+                                Mobile
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="whatsapp-input" />
+                              <span class="floating-label text-grey-m3">
+                                Whatsapp No
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="residence-phone-input" />
+                              <span class="floating-label text-grey-m3">
+                                Residence Phone No
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="office-phone-input" />
+                              <span class="floating-label text-grey-m3">
+                                Office Phone No
+                              </span>
+                            </div>
+                          </div>
+
+
+                        </div>
+
+                        <!--  Permanent Address -->
+                        <div class="card-header py-2 mb-3">
+                          <h3 class="card-title text-125  text-primary-d2 ">
+                            <i class="fas fa-address-book mr-1"></i>
+                            Permanent Address
+                          </h3>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-md-4">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="permanent-address-one-input" />
+                              <span class="floating-label text-grey-m3">
+                                Address Line 1
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="permanent-address-two-input" />
+                              <span class="floating-label text-grey-m3">
+                                Address Line 2
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="permanent-address-three-input" />
+                              <span class="floating-label text-grey-m3">
+                                Address Line 3
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row d-flex align-items-end">
+                          <div class="form-group col-md-3">
+
+                            <select class="form-control" id="permanent-address-country">
+                              <option value="">Select Country</option>
+                              <option value='AL'>CNIC</option>
+                              <option value='AK'>Pakistan Card</option>
+                              <option value='AZ'>Passport</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <select class="form-control" id="permanent-address-state">
+                              <option value="">Select State</option>
+                              
+                            </select>
+                          </div>
+                          <div class="form-group col-md-3">
+
+                            <select class="form-control" id="permanent-address-city">
+                              <option value="">Select City</option>
+                              
+                            </select>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="permanent-address-zip" />
+                              <span class="floating-label text-grey-m3">
+                                Postal/Zip Code
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- mailing address -->
+                        <div class="card-header py-2 mb-3">
+                          <h3 class="card-title text-125  text-primary-d2 ">
+                            <i class="fas fa-address-book"></i>
+                            Mailing Address
+                          </h3>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-md-4">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="mailing-address-one-input" />
+                              <span class="floating-label text-grey-m3">
+                                Address Line 1
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="mailing-address-two-input" />
+                              <span class="floating-label text-grey-m3">
+                                Address Line 2
+                              </span>
+                            </div>
+                          </div>
+                          <div class="form-group col-md-4">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="mailing-address-three-input" />
+                              <span class="floating-label text-grey-m3">
+                                Address Line 3
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row d-flex align-items-end">
+                          <div class="form-group col-md-3">
+                            <select class="form-control" id="mailing-address-country" onchange="fetchStates()">
+                              <option value=""> Country</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <select class="form-control" id="mailing-address-state" onchange="fetchCities()" disabled>
+                              <option value=""> State</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <select class="form-control" id="mailing-address-city" disabled>
+                              <option value="">Select City</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <div class="input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control shadow-none" id="mailing-address-zip" />
+                              <span class="floating-label text-grey-m3">
+                                Postal/Zip Code
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <!-- farhan -->
+
+                        <!-- Hamza -->
+
+                        <div class="card-header py-2 mb-3">
+                          <h3 class="card-title text-125  text-primary-d2 ">
+                            <i class="fas fa-file mr-1"></i>
+                            Attachments
+                          </h3>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Profile Pic</label>
+                              <input class="form-control" type="file" id="profile-pic-file">
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Identity Front Side</label>
+                              <input class="form-control" type="file" id="identity-front-file">
+                            </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <div class="mb-3">
+                              <label for="formFile" class="form-label">Identity Back Side</label>
+                              <input class="form-control" type="file" id="identity-back-file">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div id="step-3" class="text-center">
+
+                        <div class="card-header py-2 mb-3">
+                          <h3 class="card-title text-125 text-primary-d2 ">
+                            <i class="fas fa-shield-check mr-1"></i>
+                            Terms & Conditions
+                          </h3>
+                        </div>
+
+                        <div class="row d-flex align-items-end">
+                          <div class="form-group col-md-6">
+                            <select class="form-control" id="how-you-hear-select">
+                              <option value="">How Did You Hear About This Launch</option>
+                              <option value='AL'>Mr.</option>
+                              <option value='AK'>Ms.</option>
+                              <option value='AZ'>Mrs.</option>
+                            </select>
+                          </div>
+
+                          <div class="form-group col-md-6">
+                            <select class="form-control" id="fbr-tax-status-select">
+                              <option value="">FBR Active Tax Payers Status</option>
+                              <option value='AL'>Mr.</option>
+                              <option value='AK'>Ms.</option>
+                              <option value='AZ'>Mrs.</option>
+                            </select>
+                          </div>
+
+                          <div class="form-group col-md-12">
+                            <div class=" input-floating-label text-blue-d2 brc-blue-m1">
+                              <input type="text" class="form-control  shadow-none" id="other-input" />
+                              <span class="floating-label text-grey-m3">
+                                Other
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      </form>
+
+                    </div>
+                  </div><!-- /#smartwizard-1 -->
+
+                </div><!-- /.card-body -->
+              </div><!-- .card -->
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- include common vendor scripts used in demo pages -->
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+  <!-- include vendor scripts used in "Wizard & Validation" page. see "/views//pages/partials/form-wizard/@vendor-scripts.hbs" -->
+  <script src="./node_modules/smartwizard/dist/js/jquery.smartWizard.js"></script>
+
+
+  <script src="./node_modules/jquery-validation/dist/jquery.validate.js"></script>
+
+  <script src="./node_modules/inputmask/dist/jquery.inputmask.js"></script>
+
+
+
+  <!-- include ace.js -->
+  <script src="./dist/js/ace.js"></script>
+
+
+
+  <!-- demo.js is only for Ace's demo and you shouldn't use it -->
+  <script src="./app/browser/demo.js"></script>
+
+  <script src="../js/src/select.js"></script>
+  <script src="../js/src/country_api.js"></script>
+
+  <script src="../js/src/application-form-validation.js"></script>
+
+
+
+  <!-- "Wizard & Validation" page script to enable its demo functionality -->
+  <script src="./views/pages/form-wizard/@page-script.js"></script>
+</body>
+
+</html>
